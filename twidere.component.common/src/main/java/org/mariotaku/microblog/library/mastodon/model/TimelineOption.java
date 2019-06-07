@@ -26,16 +26,17 @@ import org.mariotaku.restfu.http.SimpleValueMap;
 
 public class TimelineOption extends SimpleValueMap {
     public TimelineOption excludeReplies(boolean excludeReplies) {
-        if (excludeReplies) {
-            put("exclude_replies", true);
-        } else {
-            remove("exclude_replies");
-        }
+        put("exclude_replies", excludeReplies);
         return this;
     }
 
     public TimelineOption onlyMedia(boolean onlyMedia) {
         put("only_media", onlyMedia);
+        return this;
+    }
+
+    public TimelineOption pinned(boolean pinned) {
+        put("pinned", pinned);
         return this;
     }
 }

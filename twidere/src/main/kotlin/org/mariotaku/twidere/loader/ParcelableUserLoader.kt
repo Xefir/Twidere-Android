@@ -166,7 +166,7 @@ class ParcelableUserLoader(
             return mastodon.getAccount(userKey.id).toParcelable(details)
         }
         if (screenName == null) throw MicroBlogException("Screen name required")
-        val resultItem = mastodon.searchAccounts("$screenName@${userKey.host}", Paging().count(1))
+        val resultItem = mastodon.searchAccounts("$screenName@${userKey.host}", Paging().count(1), false)
                 .firstOrNull() ?: throw MicroBlogException("User not found")
         return resultItem.toParcelable(details)
     }

@@ -46,7 +46,7 @@ open class UserSearchLoader(
         when (details.type) {
             AccountType.MASTODON -> {
                 val mastodon = details.newMicroBlogInstance(context, Mastodon::class.java)
-                return mastodon.searchAccounts(query, paging).mapToPaginated {
+                return mastodon.searchAccounts(query, paging, false).mapToPaginated {
                     it.toParcelable(details)
                 }
             }

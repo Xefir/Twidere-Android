@@ -53,10 +53,6 @@ Material Design ready and feature rich Twitter app for Android 4.0+
   * Disable crossposters user's linkification
   * Updated API
 
-## Roadmap
-
-* Implement lists on Mastodon
-
 ## Enhanced Features (Available on Google Play) ##
 
 * Data sync with your cloud drive (Dropbox, Google Drive)

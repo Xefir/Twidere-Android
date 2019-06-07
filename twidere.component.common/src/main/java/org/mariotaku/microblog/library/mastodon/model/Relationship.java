@@ -73,6 +73,11 @@ public class Relationship {
      */
     @JsonField(name = "showing_reblogs")
     boolean showing_reblogs;
+    /**
+     * Whether the user is currently endorsing the account
+     */
+    @JsonField(name = "endorsed")
+    boolean endorsed;
 
     public String getId() {
         return id;
@@ -110,6 +115,10 @@ public class Relationship {
         return showing_reblogs;
     }
 
+    public boolean isEndorsed() {
+        return endorsed;
+    }
+
     @Override
     public String toString() {
         return "Relationship{" +
@@ -122,6 +131,7 @@ public class Relationship {
                 ", requested=" + requested +
                 ", domain_blocking=" + domain_blocking +
                 ", showing_reblogs=" + showing_reblogs +
+                ", endorsed=" + endorsed +
                 '}';
     }
 }

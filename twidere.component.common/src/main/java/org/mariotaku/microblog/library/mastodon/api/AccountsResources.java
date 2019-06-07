@@ -83,10 +83,17 @@ public interface AccountsResources {
     @POST("/v1/accounts/{id}/unmute")
     Relationship unmuteUser(@Path("id") String id) throws MicroBlogException;
 
+    @POST("/v1/accounts/{id}/pin")
+    Relationship pinUser(@Path("id") String id) throws MicroBlogException;
+
+    @POST("/v1/accounts/{id}/unpin")
+    Relationship unpinUser(@Path("id") String id) throws MicroBlogException;
+
     @GET("/v1/accounts/relationships")
     LinkHeaderList<Relationship> getRelationships(@Query(value = "id[]")
             String[] id) throws MicroBlogException;
 
     @GET("/v1/accounts/search")
-    LinkHeaderList<Account> searchAccounts(@Query("q") String query, @Nullable @Query Paging paging) throws MicroBlogException;
+    LinkHeaderList<Account> searchAccounts(@Query("q") String query, @Nullable @Query Paging paging,
+            @Query(value = "following", booleanEncoding = BooleanEncoding.IGNORE_IF_FALSE) boolean following) throws MicroBlogException;
 }
